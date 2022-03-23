@@ -1,0 +1,12 @@
+name: ci-test-workflow
+on: [push]
+jobs:
+  check-application:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2 # Pega os dados que vão subir e baixam os arquivos no ubuntu
+      - uses: actions/setup-go@v2 # Prepara o ambiente para o GO
+        with:
+          go-version: 1.15 # Parâmetro para a action setup-go@v2, informando a versão do GO
+      - run: go test
+      - run: go run math.go
