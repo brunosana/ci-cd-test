@@ -25,5 +25,5 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
-          push: true # Realiza o push no DockerHub
+          push: false # Realiza o push no DockerHub
           tags: brunosana/app:latest # Nome e tag da imagem no DockerHub. Na máquina temporária, vamos ter uma imagem com esse nome
